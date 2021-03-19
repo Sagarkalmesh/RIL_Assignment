@@ -8,7 +8,9 @@
 	margin-left: auto !important;
 	cursor: pointer;
 }
-
+#team_players li:hover{
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
 #team_players img{
 	object-fit: cover;
 	height: 100px;
