@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Virat Kohli",
+    "icon": "virat_kohli.jpg",
+    "description": "Virat Kohli is an Indian cricketer and the current captain of the India national team. A right-handed top-order batsman, Kohli is regarded as one of the best contemporary batsmen in the world."
+  },
+  {
+    "id": "2",
+    "title": "Rohit Sharma",
+    "icon": "rohit_sharma.jpg",
+    "description": "Rohit Gurunath Sharma is an Indian international cricketer who plays for Mumbai in domestic cricket and captains Mumbai Indians in the Indian Premier League as a right-handed batsman and an occasional right-arm off break bowler. "
+  },
+  {
+    "id": "3",
+    "title": "Rishabh Pant",
+    "icon": "rishabh_pant.jpg",
+    "description": "Rishabh Rajendra Pant is a professional Indian cricketer who plays as middle order wicket-keeper batsman for India, Delhi, and the Delhi Capitals in the Indian Premier League."
+  },
+  {
+    "id": "4",
+    "title": "K. L. Rahul",
+    "icon": "k_l_rahul.jpg",
+    "description": "Kannur Lokesh Rahul is an Indian international cricketer who plays for Karnataka in domestic cricket and captains Kings XI Punjab in the Indian Premier League."
+  },
+  {
+    "id": "5",
+    "title": "Hardik Pandya",
+    "icon": "hardik_pandya.jpg",
+    "description": "Hardik Himanshu Pandya is an Indian international cricketer who plays for Baroda in domestic cricket and Mumbai Indians in the Indian Premier League. He is an all-rounder who bats right-handed and bowls right-arm fast-medium. "
+  },
+  {
+    "id": "6",
+    "title": "Jasprit Bumrah",
+    "icon": "jasprit_bumrah.jpg",
+    "description": "Jasprit Jasbirsingh Bumrah is an Indian international cricketer, who plays for the Indian national cricket team in all formats of the game."
+  },
+  {
+    "id": "7",
+    "title": "Ravindra Jadeja",
+    "icon": "ravindra_jadeja.jpg",
+    "description": "Ravindrasinh Anirudhsinh Jadeja, commonly known as Ravindra Jadeja, is an Indian international cricketer. He is an all-rounder, who plays as a left-handed middle-order batsman and slow left-arm orthodox bowler. "
+  },
+  {
+    "id": "8",
+    "title": "Yuzvendra Chahal",
+    "icon": "yuzvendra_chahal.jpg",
+    "description": "Yuzvendra Singh Chahal is an Indian cricketer and former chess player who represents India in both One Day Internationals and Twenty20 Internationals, and has also represented India internationally in chess at youth levels."
+  },
+  {
+    "id": "9",
+    "title": "Washington Sundar",
+    "icon": "washington_sundar.jpg",
+    "description": "Washington Sundar is an Indian international cricketer. He is a left handed batsman and right-arm off-spinner. He has played for the India national under-19 cricket team as a batsman."
+  },
+  {
+    "id": "10",
+    "title": "Axar Patel",
+    "icon": "axar_patel.jpg",
+    "description": "Axar Rajeshbhai Patel, also spelled as Akshar Patel, is an Indian international cricketer. He plays for Gujarat in domestic cricket and for the Delhi Capitals in the Indian Premiere League. "
+  }
+]
