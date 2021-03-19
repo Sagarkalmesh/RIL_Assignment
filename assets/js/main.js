@@ -1,29 +1,20 @@
 $(document).ready(function(){
-	let team_list_html = ""
 	// get json data
 	$.ajax({
 		type:"GET",
 		url:"team_india.json",
 		data:"",
-		dataType:"json",
-		success: function(data){
-			$.each(data, function(index, element){
-				console.log(index)
-				console.log(element.title)
-				// append list items
-				team_list_html += "<li class='rounded media p-4 m-4 border-info border text-dark text-center align-self-center'>"+
-                    "<img src='assets/img/"+element.icon+"' class='rounded mr-3 align-self-center img-fluid' alt=''>"+
-                    "<div class='media-body'>"+
-                      "<h5 class='mt-0 mb-1'>"+element.title+"</h5>"+
-                      "<p class='d-none'>"+element.description+"</p>"+
-                    "</div>"+
-                  "</li>"
-				$("#team_players").html("") //clean div
-				$("#team_players").html(team_list_html)
-				//set focus to first element
-				$('#team_players').find("li:first").addClass("bg-info shadow-lg")
-			})
-
+		dataType:"jsonp",
+		success: function(response_data, ajax_fetch=true){
+			render_teamplayers(response_data)
+		},
+		error: function(xhr, status, error){
+			if(xhr.status == 0){
+				render_teamplayers(team_india_json, ajax_fetch=false)
+			}else{
+				let errorMessage = xhr.status+ ":" +xhr.statusText
+				alert(errorMessage)
+			}
 		}
 	})
 // document keyevents
@@ -86,5 +77,88 @@ $(this).keyup( function(e){
 	}
 })
 
+let team_india_json = [
+  {
+    'id': '1',
+    'title': 'Virat Kohli',
+    'icon': 'virat_kohli.jpg',
+    'description': 'Virat Kohli is an Indian cricketer and the current captain of the India national team. A right-handed top-order batsman, Kohli is regarded as one of the best contemporary batsmen in the world.'
+  },
+  {
+    'id': '2',
+    'title': 'Rohit Sharma',
+    'icon': 'rohit_sharma.jpg',
+    'description': 'Rohit Gurunath Sharma is an Indian international cricketer who plays for Mumbai in domestic cricket and captains Mumbai Indians in the Indian Premier League as a right-handed batsman and an occasional right-arm off break bowler. '
+  },
+  {
+    'id': '3',
+    'title': 'Rishabh Pant',
+    'icon': 'rishabh_pant.jpg',
+    'description': 'Rishabh Rajendra Pant is a professional Indian cricketer who plays as middle order wicket-keeper batsman for India, Delhi, and the Delhi Capitals in the Indian Premier League.'
+  },
+  {
+    'id': '4',
+    'title': 'K. L. Rahul',
+    'icon': 'k_l_rahul.jpg',
+    'description': 'Kannur Lokesh Rahul is an Indian international cricketer who plays for Karnataka in domestic cricket and captains Kings XI Punjab in the Indian Premier League.'
+  },
+  {
+    'id': '5',
+    'title': 'Hardik Pandya',
+    'icon': 'hardik_pandya.jpg',
+    'description': 'Hardik Himanshu Pandya is an Indian international cricketer who plays for Baroda in domestic cricket and Mumbai Indians in the Indian Premier League. He is an all-rounder who bats right-handed and bowls right-arm fast-medium. '
+  },
+  {
+    'id': '6',
+    'title': 'Jasprit Bumrah',
+    'icon': 'jasprit_bumrah.jpg',
+    'description': 'Jasprit Jasbirsingh Bumrah is an Indian international cricketer, who plays for the Indian national cricket team in all formats of the game.'
+  },
+  {
+    'id': '7',
+    'title': 'Ravindra Jadeja',
+    'icon': 'ravindra_jadeja.jpg',
+    'description': 'Ravindrasinh Anirudhsinh Jadeja, commonly known as Ravindra Jadeja, is an Indian international cricketer. He is an all-rounder, who plays as a left-handed middle-order batsman and slow left-arm orthodox bowler. '
+  },
+  {
+    'id': '8',
+    'title': 'Yuzvendra Chahal',
+    'icon': 'yuzvendra_chahal.jpg',
+    'description': 'Yuzvendra Singh Chahal is an Indian cricketer and former chess player who represents India in both One Day Internationals and Twenty20 Internationals, and has also represented India internationally in chess at youth levels.'
+  },
+  {
+    'id': '9',
+    'title': 'Washington Sundar',
+    'icon': 'washington_sundar.jpg',
+    'description': 'Washington Sundar is an Indian international cricketer. He is a left handed batsman and right-arm off-spinner. He has played for the India national under-19 cricket team as a batsman.'
+  },
+  {
+    'id': '10',
+    'title': 'Axar Patel',
+    'icon': 'axar_patel.jpg',
+    'description': 'Axar Rajeshbhai Patel, also spelled as Akshar Patel, is an Indian international cricketer. He plays for Gujarat in domestic cricket and for the Delhi Capitals in the Indian Premiere League. '
+  }
+]
+
 })
 
+function render_teamplayers(response_data,ajax_fetch){
+	let team_list_html = ""
+	if (!ajax_fetch) {
+		team_list_html += "<div class='text-muted err-txt col-lg-12 text-center'>Ajax request blocked by CORS, loading data from jsonArray</div>"
+	}
+	$.each(response_data, function(index, element){
+		// append list items
+		team_list_html += "<li class='rounded media p-4 m-4 border-info border text-dark text-center align-self-center'>"+
+            "<img src='assets/img/"+element.icon+"' class='rounded mr-3 align-self-center img-fluid' alt=''>"+
+            "<div class='media-body'>"+
+              "<h5 class='mt-0 mb-1'>"+element.title+"</h5>"+
+              "<p class='d-none'>"+element.description+"</p>"+
+            "</div>"+
+          "</li>"
+		$("#team_players").html("") //clean div
+		$("#team_players").html(team_list_html)
+		//set focus to first element
+		$('#team_players').find("li:first").addClass("bg-info shadow-lg")
+	})
+}

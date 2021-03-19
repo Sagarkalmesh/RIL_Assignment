@@ -25,7 +25,10 @@
 	height: 10rem !important;
 	max-width: 100% !important;
 }
-
+.err-txt{
+	font-size: 12px !important;
+	opacity: 0.5;
+}
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
 	#team_ind{
