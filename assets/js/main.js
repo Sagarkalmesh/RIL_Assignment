@@ -162,3 +162,22 @@ function render_teamplayers(response_data,ajax_fetch){
 		$('#team_players').find("li:first").addClass("bg-info shadow-lg")
 	})
 }
+
+$('body').on('click', '#team_players li', function(){
+	$("#team_players li.bg-info").removeClass("bg-info shadow-lg");
+	let curr_player = $(this)
+	$(this).focus().addClass("bg-info shadow-lg");
+  	console.log($(curr_player).find("img").attr("src"))
+  	$("#team_players").hide()
+  	$("#team_ind").find("h2").text($(curr_player).find("h5").text())
+  	$("#team_ind").find("p").text($(curr_player).find("p").text())
+  	$("#team_ind").find("img").attr("src",$(curr_player).find("img").attr("src"))
+  	$("#team_ind").show()
+})
+$('body').on('click','.team_players', function(){
+	$("#team_ind").hide()
+	$("#team_players").show()
+	$("html , body").animate({
+		scrollTop: $("#team_players").find("li.bg-info").offset().top-100
+	}, 200)
+})

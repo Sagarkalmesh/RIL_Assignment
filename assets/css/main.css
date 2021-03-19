@@ -6,6 +6,7 @@
 	max-width: 50% !important;
 	margin-right: auto !important;
 	margin-left: auto !important;
+	cursor: pointer;
 }
 
 #team_players img{
