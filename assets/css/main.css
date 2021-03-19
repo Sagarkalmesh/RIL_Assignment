@@ -1,0 +1,58 @@
+#team_players li{
+	align-items: center !important;
+	min-height: 8rem !important;
+	max-height: 8rem !important;
+	min-width: 50% !important;
+	max-width: 50% !important;
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+
+#team_players img{
+	object-fit: cover;
+	/*height: 5rem !important;*/
+	/*max-width: 25% !important;*/
+	height: 100px;
+	width: 100px;
+}
+
+#team_ind{
+	min-width: 50% !important;
+	max-width: 50% !important;
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+#team_ind img{
+	object-fit: cover;
+	height: 10rem !important;
+	max-width: 100% !important;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+	#team_ind{
+		min-width: 100% !important;
+		max-width: 100% !important;
+	}
+	#team_players li{
+		min-width: 100% !important;
+		max-width: 100% !important;
+	}
+	#team_ind{
+		padding: 0 !important;
+	}
+}
+@media (max-width: 767.98px) {
+	#team_ind{
+		min-width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+
+@media (max-width: 991.98px) {
+	#team_ind{
+		min-width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+
