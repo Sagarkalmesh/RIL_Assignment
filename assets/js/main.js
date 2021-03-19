@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	console.log("testsss")
 	let team_list_html = ""
 	// get json data
 	$.ajax({

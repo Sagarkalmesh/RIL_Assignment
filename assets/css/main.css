@@ -10,8 +10,6 @@
 
 #team_players img{
 	object-fit: cover;
-	/*height: 5rem !important;*/
-	/*max-width: 25% !important;*/
 	height: 100px;
 	width: 100px;
 }
