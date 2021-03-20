@@ -21,7 +21,6 @@ $(document).ready(function(){
 $(this).keydown( function(e){
 	//e.preventDefault();
 	if (e.keyCode == 40 ){ //key down code
-		console.log("keydown")
 		if($("#team_players li.bg-info").length!=0) {
                 var curr_target = $('#team_players').find("li.bg-info").next();
                 $("html , body").animate({
@@ -40,7 +39,6 @@ $(this).keydown( function(e){
 	if(e.keyCode == 13){  // the enter key code
 		if($("#team_players").is(":visible")){
 			let curr_player = $('#team_players').find("li.bg-info")
-		  	console.log($(curr_player).find("img").attr("src"))
 		  	$("#team_players").hide()
 		  	$("#team_ind").find("h2").text($(curr_player).find("h5").text())
 		  	$("#team_ind").find("p").text($(curr_player).find("p").text())
@@ -52,7 +50,6 @@ $(this).keydown( function(e){
 $(this).keyup( function(e){
 	//e.preventDefault();
 	if (e.keyCode == 38 ){ //key up code
-		console.log("keyup")
 		if($("#team_players li.bg-info").length!=0) {
                 var curr_target = $('#team_players').find("li.bg-info").prev();
                 $("#team_players li.bg-info").removeClass("bg-info shadow-lg");
@@ -145,7 +142,7 @@ let team_india_json = [
 function render_teamplayers(response_data,ajax_fetch){
 	let team_list_html = ""
 	if (!ajax_fetch) {
-		team_list_html += "<div class='text-muted err-txt col-lg-12 text-center'>Ajax request blocked by CORS, loading data from jsonArray</div>"
+		$("<div class='text-muted err-txt col-lg-12 text-center'>Ajax request blocked by CORS, loading data from jsonArray</div>").insertBefore("#team_players") 
 	}
 	$.each(response_data, function(index, element){
 		// append list items
@@ -167,7 +164,6 @@ $('body').on('click', '#team_players li', function(){
 	$("#team_players li.bg-info").removeClass("bg-info shadow-lg");
 	let curr_player = $(this)
 	$(this).focus().addClass("bg-info shadow-lg");
-  	console.log($(curr_player).find("img").attr("src"))
   	$("#team_players").hide()
   	$("#team_ind").find("h2").text($(curr_player).find("h5").text())
   	$("#team_ind").find("p").text($(curr_player).find("p").text())
