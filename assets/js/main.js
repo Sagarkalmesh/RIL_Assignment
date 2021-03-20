@@ -41,9 +41,13 @@ $(this).keydown( function(e){
 			let curr_player = $('#team_players').find("li.bg-info")
 		  	$("#team_players").hide()
 		  	$("#team_ind").find("h2").text($(curr_player).find("h5").text())
+		  	var curr_team_mem = $("#team_ind").find("h2").text($(curr_player).find("h5").text()).text()
 		  	$("#team_ind").find("p").text($(curr_player).find("p").text())
 		  	$("#team_ind").find("img").attr("src",$(curr_player).find("img").attr("src"))
 		  	$("#team_ind").show()
+		  	//var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?player';
+			//window.history.pushState({ path: newurl }, '', newurl);
+			location.hash = '?player'
 		}
 	  }
 })
@@ -169,6 +173,8 @@ $('body').on('click', '#team_players li', function(){
   	$("#team_ind").find("p").text($(curr_player).find("p").text())
   	$("#team_ind").find("img").attr("src",$(curr_player).find("img").attr("src"))
   	$("#team_ind").show()
+  	location.hash = '?player'
+
 })
 $('body').on('click','.team_players', function(){
 	$("#team_ind").hide()
@@ -178,10 +184,15 @@ $('body').on('click','.team_players', function(){
 	}, 200)
 })
 
-$(window).on("navigate", function (event, data) {
-  var direction = data.state.direction;
-  if (direction == 'back') {
-    $(".team_players").trigger("click")
-  }
-  
-});
+function change_hash(){
+	var location_href = window.location
+	var str_loc = String(location_href)
+	if(!str_loc.includes('?player')){
+		$("#team_ind").hide()
+		$("#team_players").show()
+		$("html , body").animate({
+			scrollTop: $("#team_players").find("li.bg-info").offset().top-100
+		}, 200)
+	}
+
+}
