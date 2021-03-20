@@ -12,8 +12,12 @@ $(document).ready(function(){
 			if(xhr.status == 0){
 				render_teamplayers(team_india_json, ajax_fetch=false)
 			}else{
+				console.log(xhr)
+				console.log(xhr.status)
+				console.log(xhr.statusText)
+				console.log(errorMessage)
 				let errorMessage = xhr.status+ ":" +xhr.statusText
-				alert(errorMessage)
+				//alert(errorMessage)
 			}
 		}
 	})
