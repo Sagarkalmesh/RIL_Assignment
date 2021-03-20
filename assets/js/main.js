@@ -177,3 +177,14 @@ $('body').on('click','.team_players', function(){
 		scrollTop: $("#team_players").find("li.bg-info").offset().top-100
 	}, 200)
 })
+
+$(window).on("navigate", function (event, data) {
+  var direction = data.state.direction;
+  if (direction == 'back') {
+    $("#team_ind").hide()
+	$("#team_players").show()
+	$("html , body").animate({
+		scrollTop: $("#team_players").find("li.bg-info").offset().top-100
+	}, 200)
+  }
+});
